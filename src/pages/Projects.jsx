@@ -36,7 +36,7 @@ const Projects = () => {
   }, []);
 
   if (loading) {
-    return <p>s...</p>;
+    return <p>...</p>;
   }
 
   if (error) {
@@ -45,7 +45,7 @@ const Projects = () => {
 
   return (
     <section className="bg-white mx-60 mb-8 py-2 px-8 text-sm">
-      <h2 className="text-4xl font-extrabold text-center mb-8 text-gray-800">
+      <h2 className="text-3xl px-4 font-extrabold text-center mb-8 text-gray-800">
         Projects
       </h2>
       <div className="grid grid-cols-1 gap-8"> {/* Use grid for column layout */}
