@@ -1,0 +1,38 @@
+import React from "react";
+import { FaGithub, FaTwitter, FaEnvelope } from "react-icons/fa";
+
+const Footer = () => {
+  return (
+    <footer className="flex justify-between items-center bg-white mx-60 pb-4 px-12 ">
+      <div className="text-sm">
+        <span>Tunu</span>
+      </div>
+      <div className="flex space-x-4">
+        <a
+          href="https://github.com/your-github-username"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-black hover:text-gray-600"
+        >
+          <FaGithub size={20} />
+        </a>
+        <a
+          href="https://twitter.com/your-twitter-handle"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-black hover:text-gray-600"
+        >
+          <FaTwitter size={20} />
+        </a>
+        <a
+          href="mailto:your-email@example.com"
+          className="text-black hover:text-gray-600"
+        >
+          <FaEnvelope size={20} />
+        </a>
+      </div>
+    </footer>
+  );
+};
+
+export default Footer;
