@@ -3,7 +3,7 @@ import { FaGithub, FaTwitter, FaEnvelope } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <footer className="flex justify-between items-center bg-white mx-60 pb-4 px-12 ">
+    <footer className="flex justify-between items-center bg-white mx-24 md:mx-28 px-6 md:px-28 py-2 ">
       <div className="text-xl font-semibold text-gray-900">
         <span>Tunu Doley</span>
       </div>

@@ -31,23 +31,38 @@ const Blogs = () => {
   }, []);
 
   if (loading) {
-    return <p>...</p>;
+    return <p className="text-center text-gray-500 mt-8">Loading Blogs...</p>;
   }
 
   if (error) {
-    return <p>Error: {error}</p>;
+    return <p className="text-center text-red-500 mt-8">{error}</p>;
   }
 
   return (
-    <section className="bg-white mx-60 mb-8 py-2 px-8 text-sm">
-      <h1 className="text-3xl font-bold mt-4 mb-4">Blogs</h1>
-      <p className="text-gray-700">Explore my writings and thoughts.</p>
-      <div className="grid grid-cols-1 gap-8"> {/* Change grid-cols-1 to grid-cols-1 */}
+    <section className="bg-white px-4 py-8 sm:px-8 lg:px-20 xl:px-40">
+      <h1 className="text-3xl font-bold text-center text-gray-800 mb-4">Blogs</h1>
+      <p className="text-center text-gray-700 mb-8">
+        Explore my writings and thoughts.
+      </p>
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {/* Responsive grid */}
         {blogs.map((blog) => (
-          <div key={blog.id} className="bg-white p-6 rounded-lg shadow-md hover:shadow-xl">
-            <h2 className="text-xl font-bold mb-2">{blog.title}</h2>
-            <p className="text-gray-700">{blog.excerpt}</p>
-            <a href={`/blog/${blog.id}`} className="text-blue-500 hover:underline">Read more</a>
+          <div
+            key={blog.id}
+            className="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-transform transform hover:-translate-y-2"
+          >
+            <h2 className="text-xl font-bold text-gray-800 mb-2">
+              {blog.title}
+            </h2>
+            <p className="text-gray-700 text-sm leading-relaxed">
+              {blog.excerpt}
+            </p>
+            <a
+              href={`/blog/${blog.id}`}
+              className="text-blue-500 hover:underline mt-4 block"
+            >
+              Read more
+            </a>
           </div>
         ))}
       </div>

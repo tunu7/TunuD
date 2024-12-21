@@ -13,7 +13,6 @@ const Projects = () => {
         const projectsCollection = collection(db, "projects");
         const projectsSnapshot = await getDocs(projectsCollection);
 
-        // Check if there are any retrieved documents
         if (!projectsSnapshot.empty) {
           const projectsList = projectsSnapshot.docs.map((doc) => ({
             id: doc.id,
@@ -25,8 +24,9 @@ const Projects = () => {
         }
       } catch (error) {
         console.error("Error fetching projects:", error);
-        // Handle specific errors here (e.g., network errors, permission errors)
-        setError("An error occurred while loading projects. Please try again later.");
+        setError(
+          "An error occurred while loading projects. Please try again later."
+        );
       } finally {
         setLoading(false);
       }
@@ -36,32 +36,41 @@ const Projects = () => {
   }, []);
 
   if (loading) {
-    return <p>...</p>;
+    return <p className="text-center text-gray-500 mt-8">Loading Projects...</p>;
   }
 
   if (error) {
-    return <p>{error}</p>;
+    return <p className="text-center text-red-500 mt-8">{error}</p>;
   }
 
   return (
-    <section className="bg-white mx-60 mb-8 py-2 px-8 text-sm">
-      <h2 className="text-3xl px-4 font-extrabold text-center mb-8 text-gray-800">
-        Projects
-      </h2>
-      <div className="grid grid-cols-1 gap-8"> {/* Use grid for column layout */}
-        {projects.map((project) => (
-          <div
-            key={project.id}
-            className="p-6 bg-white border border-gray-200 rounded-lg shadow-md hover:shadow-xl transition-transform transform hover:-translate-y-2"
-          >
-            <h3 className="text-2xl font-semibold text-gray-700 mb-3">
-              {project.title}
-            </h3>
-            <p className="text-gray-600 leading-relaxed">{project.description}</p>
-          </div>
-        ))}
-      </div>
-    </section>
+    <section className="bg-white px-4 py-8 sm:px-8 lg:px-20 xl:px-40">
+    <h2 className="text-3xl font-extrabold text-center mb-8 text-gray-800">
+      Projects
+    </h2>
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+      {projects.map((project) => (
+        <div
+          key={project.id}
+          className="p-6 bg-white border border-gray-200 rounded-lg shadow-md hover:shadow-xl transition-transform transform hover:-translate-y-2"
+        >
+          <img
+            src="E:\Inspiration images\portfolio\images.jpg" // Hardcoded static image URL
+            alt={project.title} // Dynamic alt text
+            className="w-full h-48 object-cover rounded-lg mb-4"
+          />
+          
+          <h3 className="text-xl font-semibold text-gray-700 mb-3">
+            {project.title}
+          </h3>
+          <p className="text-gray-600 text-sm leading-relaxed">
+            {project.description}
+          </p>
+        </div>
+      ))}
+    </div>
+  </section>
+  
   );
 };
 

@@ -4,12 +4,12 @@ import { getFirestore, collection, getDocs, limit, query } from "firebase/firest
 
 // Your Firebase config
 const firebaseConfig = {
-  apiKey: "AIzaSyDL7podUEwFOx9fpH54FxC0R2O7_6gJE7Q",
-  authDomain: "portfolio-7bfa0.firebaseapp.com",
-  projectId: "portfolio-7bfa0",
-  storageBucket: "portfolio-7bfa0.firebasestorage.app",
-  messagingSenderId: "1064033207544",
-  appId: "1:1064033207544:web:687c7769d54ecbca6e670d"
+  apiKey: "AIzaSyDpA-8J_eINN10DE6AEl0dGxU4lRsVgeOk",
+  authDomain: "portfolio-b6a51.firebaseapp.com",
+  projectId: "portfolio-b6a51",
+  storageBucket: "portfolio-b6a51.firebasestorage.app",
+  messagingSenderId: "969499594892",
+  appId: "1:969499594892:web:942b43c0a5c1ae0bd3aba9"
 };
 
 // Initialize Firebase
